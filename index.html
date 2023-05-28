@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/a3ae5aba6e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"></script>
   </head>
   <body>
     <section>
@@ -42,7 +43,7 @@
             <div class="header-text-wrapper">
               <h1 class="header-title">Welcome To Infinite Movies</h1>
               <h4 class="header-subtitle">
-                We are the best when it comes to finding your Movie
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quo odit sit placeat minus debitis!
               </h4>
             </div>
             <div class="search-container">
@@ -57,7 +58,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="#Movies">
       <div class="container">
         <div class="row">
           <div class="results">
@@ -65,30 +66,37 @@
               <h1 class="results-title">
                 Search Results: <span class="white">Strange</span>
               </h1>
+              <select name="Movie-Filter" id="">
+                <option  selected value="1">Newest-Oldest</option>
+                <option value="2">Ratings Lowest-Highest</option>
+                <option value="3">Ratings Highest-Lowest</option>
+                <option value="4">Alphabetical A-Z</option>
+                <option value="5">Alphabetical Z-A</option>
+              </select>
             </div>
           </div>
           <div class="movie-list">
             <div class="movie">
-              <figure>
+              <figure class="movie-explanation">
                 <img
                   class="movie-img"
-                  src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTBkJyigjLtZIh5n6Tp9Pm99opUdXtFH_QV9NWxdt2-f5mOIbq_"
+                  src=""
                   alt=""
                 />
+                <div class="movie-background"></div>
+                <p class="movie-details"></p>
               </figure>
               <div class="movie-description">
-                <h1 class="movie-title">Dr Strange</h1>
-                <h4 class="movie-rating yellow">5.5</h4>
+                <h1 class="movie-title"></h1>
+                <h4 class="movie-rating yellow"></h4>
                 <h3 class="movie-released">
-                  Release Date:
-                  <span class="movie-release-date">2023-04-05</span>
+                  <span class="movie-release-date"></span>
                 </h3>
               </div>
             </div>
-          </div>
-          
-        </div>
+            
       </div>
+      
     </section>
   </body>
 </html>
