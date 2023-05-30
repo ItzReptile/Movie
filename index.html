@@ -10,7 +10,7 @@
       src="https://kit.fontawesome.com/a3ae5aba6e.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
+    <script src="index.js" defer ></script>
   </head>
   <body>
     <section>
@@ -51,6 +51,7 @@
                 type="search"
                 class="search-bar"
                 placeholder="Find A Movie"
+                onchange="onSearchChange(event)"
               />
               <button class="search-button">Search</button>
             </div>
@@ -64,14 +65,14 @@
           <div class="results">
             <div class="search-results">
               <h1 class="results-title">
-                Search Results: <span class="white">Strange</span>
+                Search Results: <span class="search-results-title white"></span>
               </h1>
-              <select name="Movie-Filter" id="">
-                <option  selected value="1">Newest-Oldest</option>
-                <option value="2">Ratings Lowest-Highest</option>
-                <option value="3">Ratings Highest-Lowest</option>
-                <option value="4">Alphabetical A-Z</option>
-                <option value="5">Alphabetical Z-A</option>
+              <select name="Movie-Filter" onchange="filterMovies(event)" id="filiter">
+                <option  selected value="NEWEST-OLDEST">Newest-Oldest</option>
+                <option value="">Ratings Lowest-Highest</option>
+                <option value="">Ratings Highest-Lowest</option>
+                <option value="">Alphabetical A-Z</option>
+                <option value="">Alphabetical Z-A</option>
               </select>
             </div>
           </div>
@@ -93,10 +94,8 @@
                   <span class="movie-release-date"></span>
                 </h3>
               </div>
-            </div>
-            
-      </div>
-      
+            </div> 
+          </div>
     </section>
   </body>
 </html>
