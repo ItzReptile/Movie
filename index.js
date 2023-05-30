@@ -4,13 +4,17 @@ const movie = document.querySelector(".movie-list");
 const searchresults = document.querySelector(".search-results-title");
 const headerEl = document.querySelector("#Movies");
 
-async function renderMovies(filter, search) {
+async function rendermovies(filter, search) {
   movie.classList += " movie__loading";
   const movies = await fetch(
     `https://www.omdbapi.com/?i=tt3896198&apikey=c5a8f649&s=${search}`
   );
   movie.classList.remove("movie__loading");
   const moviesData = await movies.json();
+  console.log(moviesData);
+  console.log(movie)
+  console.log(searchresults)
+  
 
   if (moviesData.search) {
     if (filter === "NEWEST-OLDEST") {
@@ -22,47 +26,42 @@ async function renderMovies(filter, search) {
       .map((movie) => moviesHTML(movie))
       .join("");
     headerEl.scrollIntoView({ behavior: "smooth" });
-  } else {
   }
-
 }
 
 function onSearchChange(event) {
-  const search = event.target.value; 
-    searchresults.innerHTML = search;
-  renderMovies("", search);
+  const search = event.target.value;
+  searchresults.innerHTML = search;
+  rendermovies("", search);
 }
 
-function filterMovies(event) {
+function filtermovies(event) {
   const filter = event.target.value;
   const search = searchresults.innerHTML;
-  renderMovies(filter, search);
+  rendermovies(filter, search);
 }
-1;
 
-function moviesHTML(movies) {
+function moviesHTML(HOPE) {
   return `<div class="movie">
   <figure class="movie-explanation">
     <img
       class="movie-img"
-      src="${movies.Poster}"
+      src="${HOPE.Poster}"
       alt="Not Avaiable"
     />
     <div class="movie-background"></div>
-    <p class="movie-details">${movies.Plot}</p>
+    <p class="movie-details">${HOPE.Plot}</p>
   </figure>
   <div class="movie-description">
-    <h1 class="movie-title">${movies.Title}</h1>
-    <h4 class="movie-rating yellow">${movies.imdbRating}</h4>
+    <h1 class="movie-title">${HOPE.Title}</h1>
+    <h4 class="movie-rating yellow">${HOPE.imdbRatin}</h4>
     <h3 class="movie-released">
-      <span class="movie-release-date">${movies.Released}</span>
+      <span class="movie-release-date">${HOPE.Released}</span>
     </h3>
   </div>
 </div>`;
-
 }
 setTimeout(() => {
-  renderMovies("", "");
+  rendermovies("", "");
 });
-
 
