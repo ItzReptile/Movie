@@ -59,7 +59,7 @@ function moviesHTML(HOPE) {
       <span class="movie-release-date">${HOPE.Released}</span>
     </h3>
   </div>
-</div>`;
+</div>`.join()
 }
 setTimeout(() => {
   rendermovies("", "");
