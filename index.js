@@ -1,7 +1,7 @@
 // api `https://www.omdbapi.com/?i=tt3896198&apikey=c5a8f649&`
 
 const movie = document.querySelector(".movie-list");
-const searchresults = document.querySelector(".search-title-results");
+const searchresults = document.querySelector(".search-results-title");
 const headerEl = document.querySelector("#Movies");
 
 async function renderMovies(filter, search) {
@@ -18,17 +18,18 @@ async function renderMovies(filter, search) {
     } else if (filter === "OLDEST-NEWEST") {
       moviesData.search.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
     }
-    movie.innerHTML = moviesData.search.map((movie) =>
-      moviesHTML(movie)
-    ).join("");
+    movie.innerHTML = moviesData.search
+      .map((movie) => moviesHTML(movie))
+      .join("");
     headerEl.scrollIntoView({ behavior: "smooth" });
   } else {
   }
+
 }
 
 function onSearchChange(event) {
-  const search = event.target.value;
-  searchresults.innerHTML = search;
+  const search = event.target.value; 
+    searchresults.innerHTML = search;
   renderMovies("", search);
 }
 
@@ -36,7 +37,8 @@ function filterMovies(event) {
   const filter = event.target.value;
   const search = searchresults.innerHTML;
   renderMovies(filter, search);
-}1
+}
+1;
 
 function moviesHTML(movies) {
   return `<div class="movie">
@@ -57,7 +59,10 @@ function moviesHTML(movies) {
     </h3>
   </div>
 </div>`;
+
 }
 setTimeout(() => {
-  renderMovies('', ''); 
+  renderMovies("", "");
 });
+
+
