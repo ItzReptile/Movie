@@ -67,35 +67,34 @@
               <h1 class="results-title">
                 Search Results: <span class="search-results-title white"></span>
               </h1>
-              <select name="Movie-Filter" onchange="filtermovies(event)" id="filter">
-                <option  selected value="NEWEST-OLDEST">Newest-Oldest</option>
-                <option value="">Ratings Lowest-Highest</option>
-                <option value="">Ratings Highest-Lowest</option>
-                <option value="">Alphabetical A-Z</option>
-                <option value="">Alphabetical Z-A</option>
+              <select name="Movie-Filter" id="filter" onchange="filtermovies(event)">
+                <option disabled selected>Sort</option>
+                <option value="NEWEST-OLDEST">Newest-Oldest</option>
+                <option value="OLDEST-NEWEST">Oldest-Newest</option>
               </select>
             </div>
           </div>
+          <div class="movie-flex">
           <div class="movie-list">
-            <div class="movie" onclick="showMovies(event)" >
-              <figure class="movie-explanation">
+            <div class="movie">
+              <figure class="">
                 <img
-                  class="movie-img"
+                  class="movie-img movie-explanation"
                   src=""
                   alt=""
                 />
                 <div class="movie-background"></div>
-                <p class="movie-details"></p>
               </figure>
+              <p class="movie-details">MORE INFO</p>
               <div class="movie-description">
                 <h1 class="movie-title"></h1>
-                <h4 class="movie-rating yellow"></h4>
                 <h3 class="movie-released">
                   <span class="movie-release-date"></span>
                 </h3>
               </div>
             </div> 
           </div>
+        </div>
     </section>
   </body>
 </html>
